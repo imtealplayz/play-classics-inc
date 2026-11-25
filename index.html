@@ -3,39 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#100d19">
+  <meta name="theme-color" content="#f7f6f0">
   <meta name="description" content="Play nine classic two-player games with friends. Sign in with Discord, make a private room and share the invite.">
-  <title>Play Classics — One more game. One more rematch.</title>
+  <title>Play Classics — Good games, good company.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/redesign.css">
   <script src="/app.js" defer></script>
 </head>
 <body>
-  <div class="ambient ambient-one"></div>
-  <div class="ambient ambient-two"></div>
   <div class="app-shell">
-    <aside class="sidebar legacy-session" aria-hidden="true">
-      <div id="sidebar-profile"></div>
-    </aside>
-
+    <aside class="sidebar legacy-session" aria-hidden="true"><div id="sidebar-profile"></div></aside>
     <main class="main-content" id="home">
       <header class="topbar">
         <a class="brand" href="#home" aria-label="Play Classics home">
           <span class="brand-mark"><span></span><span></span><span></span><span></span></span>
           <span class="brand-name">play<span>classics</span></span>
         </a>
-
         <nav class="top-nav" aria-label="Main navigation">
-          <a href="#games">🎮 <span>Games</span></a>
-          <a href="#how">🪄 <span>How it works</span></a>
-          <button id="nav-join" type="button">🎟️ <span>Join a room</span></button>
+          <a href="#games">Games</a>
+          <a href="#how">How it works</a>
+          <button id="nav-join" type="button">Join a room</button>
         </nav>
-
         <div class="top-actions">
-          <div class="connection-pill"><span></span> THE ARCADE IS OPEN</div>
+          <div class="connection-pill"><span></span> ARCADE OPEN</div>
           <div id="top-profile" class="top-profile">
             <button class="discord-button" id="login-button"><span class="discord-icon">◉</span> Continue with Discord</button>
           </div>
@@ -44,157 +37,89 @@
 
       <section class="welcome-row" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <div class="eyebrow hero-pill"><span class="eyebrow-status"></span> THE FRIENDLY RIVALRY CLUB</div>
-          <h1 id="hero-title">One more game.<br><span class="gradient-text">One more rematch.</span></h1>
-          <p class="welcome-copy">Play nine classic two-player games with your friends. Sign in with Discord, create a private room, share the code and get straight to it.</p>
+          <div class="eyebrow"><span class="eyebrow-line"></span> A PLACE FOR FRIENDLY RIVALRIES</div>
+          <h1 id="hero-title">Good games.<br><em>Better company.</em></h1>
+          <p class="welcome-copy">Nine familiar games, made for two. Sign in with Discord, open a private room and send a friend the invite. That's the whole plan.</p>
           <div class="welcome-actions">
             <button class="button button-primary" id="hero-create">Create a room <span>↗</span></button>
-            <button class="button button-quiet" id="hero-join">Got a code? Join a game <span>→</span></button>
+            <button class="button button-quiet" id="hero-join">I have a room code <span>→</span></button>
           </div>
-          <div class="hero-microcopy"><span class="micro-check">✓</span> No download. No public matchmaking. Just you and a friend.</div>
+          <p class="hero-note">No download. No public matchmaking. Just you and a friend.</p>
         </div>
 
-        <div class="hero-art" aria-label="A glossy purple arcade orb with classic game symbols">
-          <div class="hero-orbit orbit-one"></div>
-          <div class="hero-orbit orbit-two"></div>
-          <div class="glossy-blob">
-            <div class="blob-gloss"></div>
-            <div class="blob-board">
+        <div class="hero-art" aria-label="Tic-Tac-Toe board ready for a game">
+          <div class="hero-art-top"><span>THE NEXT MATCH</span><span>01 / 09</span></div>
+          <div class="art-board">
+            <div class="art-board-grid">
               <span>×</span><span></span><span>○</span>
               <span></span><span>×</span><span></span>
-              <span>○</span><span></span><span>×</span>
+              <span>○</span><span></span><span></span>
             </div>
           </div>
-          <div class="game-token token-chess">♞</div>
-          <div class="game-token token-paper">✋</div>
-          <div class="game-token token-four"><i></i><i></i><i></i><i></i></div>
-          <div class="art-caption"><span></span> BIG REMATCH ENERGY</div>
+          <div class="hero-art-bottom"><span class="art-status"></span> YOUR MOVE, WHENEVER YOU'RE READY</div>
         </div>
       </section>
 
-      <section class="stat-banner" aria-label="Play Classics at a glance">
-        <div class="stat-banner-copy">
-          <span class="micro-label">THE WHOLE DEAL</span>
-          <strong>A tiny arcade. A frankly unreasonable amount of rivalry.</strong>
-          <small>Pick a game, open a room, and send one invite link.</small>
-        </div>
-        <div class="stat-item"><strong>09</strong><span>CLASSIC GAMES</span></div>
-        <div class="stat-item"><strong>02</strong><span>PLAYERS PER ROOM</span></div>
-        <div class="stat-item"><strong>01</strong><span>INVITE LINK</span></div>
+      <section class="facts-row" aria-label="About the arcade">
+        <span><strong>09</strong> games</span>
+        <i></i><span><strong>02</strong> players per room</span>
+        <i></i><span>Private invite links</span>
+        <i></i><span>Discord sign-in</span>
       </section>
 
       <section class="games-section" id="games">
         <div class="section-heading">
           <div class="section-heading-copy">
-            <div class="eyebrow"><span class="eyebrow-line"></span> CHOOSE YOUR CHAOS</div>
-            <h2>Pick your next <span class="gradient-text">argument.</span></h2>
-            <p>Quick mind games or slow-burn strategy. Every room is made for two.</p>
+            <div class="eyebrow"><span class="eyebrow-line"></span> THE GAME SHELF</div>
+            <h2>What are we playing?</h2>
+            <p>Pick something quick or settle in for a proper contest.</p>
           </div>
           <div class="game-filter" aria-label="Filter games">
-            <button class="filter-chip active" data-filter="all">All games <b>9</b></button>
+            <button class="filter-chip active" data-filter="all">All <b>9</b></button>
             <button class="filter-chip" data-filter="quick">Quick play</button>
             <button class="filter-chip" data-filter="strategy">Strategy</button>
           </div>
         </div>
 
         <div class="game-grid" id="game-grid">
-          <button class="game-card card-peach" data-game="tictactoe" data-category="quick">
-            <span class="card-number">01 <i>·</i> QUICK CLASSIC</span>
-            <span class="game-art art-ttt"><i>×</i><i>○</i><i>×</i><i>○</i><i>×</i><i>○</i><i>×</i><i>○</i><i>×</i></span>
-            <span class="game-card-bottom"><span><strong>Tic-Tac-Toe</strong><small>Three marks. One line. No excuses.</small></span><span class="card-arrow">↗</span></span>
-            <span class="card-meta">2 PLAYERS <i>·</i> TAKE TURNS</span>
-          </button>
-
-          <button class="game-card card-sage" data-game="chess" data-category="strategy">
-            <span class="card-number">02 <i>·</i> STRATEGY</span>
-            <span class="game-art art-chess">♞<span>♜</span><span>♛</span></span>
-            <span class="game-card-bottom"><span><strong>Chess</strong><small>Every move has a consequence.</small></span><span class="card-arrow">↗</span></span>
-            <span class="card-meta">2 PLAYERS <i>·</i> FULL CHESS RULES</span>
-          </button>
-
-          <button class="game-card card-lilac" data-game="rps" data-category="quick">
-            <span class="card-number">03 <i>·</i> QUICK CLASSIC</span>
-            <span class="game-art art-rps"><i>✊</i><i>✌️</i><i>✋</i></span>
-            <span class="game-card-bottom"><span><strong>Rock Paper Scissors</strong><small>Lock your pick. Reveal together.</small></span><span class="card-arrow">↗</span></span>
-            <span class="card-meta">2 PLAYERS <i>·</i> BEST OF ROUNDS</span>
-          </button>
-
-          <button class="game-card card-sky" data-game="connect4" data-category="quick">
-            <span class="card-number">04 <i>·</i> QUICK CLASSIC</span>
-            <span class="game-art art-connect"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-            <span class="game-card-bottom"><span><strong>Connect Four</strong><small>Four in a row. Watch the diagonals.</small></span><span class="card-arrow">↗</span></span>
-            <span class="card-meta">2 PLAYERS <i>·</i> DROP A DISC</span>
-          </button>
-
-          <button class="game-card card-cream" data-game="battleship" data-category="strategy">
-            <span class="card-number">05 <i>·</i> STRATEGY</span>
-            <span class="game-art art-battle"><span>⌁</span><i>▰</i><b>×</b><i>▰</i></span>
-            <span class="game-card-bottom"><span><strong>Battleship</strong><small>Hide your fleet. Find theirs.</small></span><span class="card-arrow">↗</span></span>
-            <span class="card-meta">2 PLAYERS <i>·</i> HIDDEN FLEETS</span>
-          </button>
-
-          <button class="game-card card-rose" data-game="checkers" data-category="strategy">
-            <span class="card-number">06 <i>·</i> STRATEGY</span>
-            <span class="game-art art-checkers"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-            <span class="game-card-bottom"><span><strong>Checkers</strong><small>Captures are compulsory. Plan ahead.</small></span><span class="card-arrow">↗</span></span>
-            <span class="card-meta">2 PLAYERS <i>·</i> CHAIN CAPTURES</span>
-          </button>
-
-          <button class="game-card card-mint" data-game="reversi" data-category="strategy">
-            <span class="card-number">07 <i>·</i> STRATEGY</span>
-            <span class="game-art art-reversi"><i></i><i></i><i></i><i></i></span>
-            <span class="game-card-bottom"><span><strong>Reversi</strong><small>Flip the board. Own the corners.</small></span><span class="card-arrow">↗</span></span>
-            <span class="card-meta">2 PLAYERS <i>·</i> FLIP PIECES</span>
-          </button>
-
-          <button class="game-card card-lime" data-game="dots" data-category="quick">
-            <span class="card-number">08 <i>·</i> QUICK CLASSIC</span>
-            <span class="game-art art-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-            <span class="game-card-bottom"><span><strong>Dots &amp; Boxes</strong><small>Close a box. Keep your turn.</small></span><span class="card-arrow">↗</span></span>
-            <span class="card-meta">2 PLAYERS <i>·</i> CLAIM SQUARES</span>
-          </button>
-
-          <button class="game-card card-blue" data-game="gomoku" data-category="strategy">
-            <span class="card-number">09 <i>·</i> STRATEGY</span>
-            <span class="game-art art-gomoku"><i>●</i><i>○</i><i>●</i><i>○</i><i>●</i><i>○</i><i>●</i><i>○</i><i>●</i></span>
-            <span class="game-card-bottom"><span><strong>Gomoku</strong><small>Five in a row. Block or be blocked.</small></span><span class="card-arrow">↗</span></span>
-            <span class="card-meta">2 PLAYERS <i>·</i> FIVE IN A ROW</span>
-          </button>
+          <button class="game-card card-peach" data-game="tictactoe" data-category="quick"><span class="card-number">01 / QUICK PLAY</span><span class="game-art art-ttt"><i>×</i><i>○</i><i>×</i><i>○</i><i>×</i><i>○</i><i>×</i><i>○</i><i>×</i></span><span class="game-card-bottom"><span><strong>Tic-Tac-Toe</strong><small>Three in a row. Simple until it isn't.</small></span><span class="card-arrow">↗</span></span></button>
+          <button class="game-card card-sage" data-game="chess" data-category="strategy"><span class="card-number">02 / STRATEGY</span><span class="game-art art-chess">♞<span>♜</span><span>♛</span></span><span class="game-card-bottom"><span><strong>Chess</strong><small>Think ahead. Protect your king.</small></span><span class="card-arrow">↗</span></span></button>
+          <button class="game-card card-lilac" data-game="rps" data-category="quick"><span class="card-number">03 / QUICK PLAY</span><span class="game-art art-rps"><i>✊</i><i>✌</i><i>✋</i></span><span class="game-card-bottom"><span><strong>Rock Paper Scissors</strong><small>Choose in secret. Reveal together.</small></span><span class="card-arrow">↗</span></span></button>
+          <button class="game-card card-sky" data-game="connect4" data-category="quick"><span class="card-number">04 / QUICK PLAY</span><span class="game-art art-connect"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="game-card-bottom"><span><strong>Connect Four</strong><small>Line up four before they do.</small></span><span class="card-arrow">↗</span></span></button>
+          <button class="game-card card-cream" data-game="battleship" data-category="strategy"><span class="card-number">05 / STRATEGY</span><span class="game-art art-battle"><span>⌁</span><i>▰</i><b>×</b><i>▰</i></span><span class="game-card-bottom"><span><strong>Battleship</strong><small>Hide your ships. Find theirs.</small></span><span class="card-arrow">↗</span></span></button>
+          <button class="game-card card-rose" data-game="checkers" data-category="strategy"><span class="card-number">06 / STRATEGY</span><span class="game-art art-checkers"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="game-card-bottom"><span><strong>Checkers</strong><small>Captures are compulsory. Plan ahead.</small></span><span class="card-arrow">↗</span></span></button>
+          <button class="game-card card-mint" data-game="reversi" data-category="strategy"><span class="card-number">07 / STRATEGY</span><span class="game-art art-reversi"><i></i><i></i><i></i><i></i></span><span class="game-card-bottom"><span><strong>Reversi</strong><small>Flip pieces and control the corners.</small></span><span class="card-arrow">↗</span></span></button>
+          <button class="game-card card-lime" data-game="dots" data-category="quick"><span class="card-number">08 / QUICK PLAY</span><span class="game-art art-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="game-card-bottom"><span><strong>Dots &amp; Boxes</strong><small>Complete a square and keep your turn.</small></span><span class="card-arrow">↗</span></span></button>
+          <button class="game-card card-blue" data-game="gomoku" data-category="strategy"><span class="card-number">09 / STRATEGY</span><span class="game-art art-gomoku"><i>●</i><i>○</i><i>●</i><i>○</i><i>●</i><i>○</i><i>●</i><i>○</i><i>●</i></span><span class="game-card-bottom"><span><strong>Gomoku</strong><small>Five in a row. Block their line.</small></span><span class="card-arrow">↗</span></span></button>
         </div>
       </section>
 
       <section class="how-section" id="how" aria-labelledby="how-title">
         <div class="how-heading">
-          <div class="eyebrow"><span class="eyebrow-line"></span> THREE STEPS. THAT'S IT.</div>
-          <h2 id="how-title">From “you on?” to <span class="gradient-text">game on.</span></h2>
-          <p>No account maze. No public queues. Just bring someone you know.</p>
+          <div class="eyebrow"><span class="eyebrow-line"></span> HOW IT WORKS</div>
+          <h2>Three steps. Then you're playing.</h2>
+          <p>Bring a friend. We'll take care of the room.</p>
         </div>
         <div class="how-grid">
-          <article class="how-card"><div class="icon-box">🎮</div><span class="step-number">01 / PICK</span><h3>Choose a classic</h3><p>Find the game that will settle absolutely nothing between you.</p></article>
-          <article class="how-card"><div class="icon-box">🔐</div><span class="step-number">02 / OPEN</span><h3>Make a private room</h3><p>Sign in with Discord and get a room code made just for your match.</p></article>
-          <article class="how-card"><div class="icon-box">📨</div><span class="step-number">03 / INVITE</span><h3>Send the link</h3><p>Your friend joins the same board. The rematch is entirely your fault.</p></article>
+          <article class="how-card"><span class="step-number">01</span><div><h3>Choose a game</h3><p>Pick the classic you both feel like playing.</p></div></article>
+          <article class="how-card"><span class="step-number">02</span><div><h3>Create a room</h3><p>Sign in with Discord and get a private room code.</p></div></article>
+          <article class="how-card"><span class="step-number">03</span><div><h3>Invite your friend</h3><p>Share the link. They'll join the same board.</p></div></article>
         </div>
       </section>
 
-      <section class="honesty-strip">
-        <span class="honesty-mark">✳</span>
-        <p><strong>No made-up reviews or mystery player counts.</strong> Just nine games, private rooms and the people you invite.</p>
-      </section>
-
-      <footer class="footer"><span>Made for the love of a good rematch.</span><span>PLAY CLASSICS <b>·</b> EST. 2026</span></footer>
+      <footer class="footer"><span>Made for the love of a good game.</span><span>PLAY CLASSICS <b>·</b> EST. 2026</span></footer>
     </main>
   </div>
 
   <div class="modal-backdrop" id="room-modal" aria-hidden="true">
     <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <button class="modal-close" data-close="room-modal" aria-label="Close">×</button>
-      <div class="modal-kicker">MAKE IT A MATCH</div>
-      <h2 id="modal-title">Start a little rivalry.</h2>
-      <p class="modal-copy">Choose a game and we'll make you a private room. Send your friend the code to bring them in.</p>
+      <div class="modal-kicker">PRIVATE GAME ROOM</div>
+      <h2 id="modal-title">Start a game.</h2>
+      <p class="modal-copy">Choose a game and we'll make a room. Your friend can join with the code.</p>
       <div class="modal-tabs"><button class="modal-tab active" data-tab="create">Create a room</button><button class="modal-tab" data-tab="join">Join a room</button></div>
-
       <div id="create-panel" class="modal-panel">
-        <label class="field-label">PICK YOUR GAME</label>
+        <label class="field-label">CHOOSE A GAME</label>
         <div class="modal-game-grid" id="modal-games">
           <button class="modal-game selected" data-game="tictactoe"><span>× ○</span><b>Tic-Tac-Toe</b></button>
           <button class="modal-game" data-game="chess"><span>♞ ♜</span><b>Chess</b></button>
@@ -208,45 +133,31 @@
         </div>
         <button class="button button-primary button-wide" id="create-room-button">Create private room <span>↗</span></button>
       </div>
-
       <div id="join-panel" class="modal-panel hidden">
-        <label class="field-label" for="room-code-input">YOUR ROOM CODE</label>
+        <label class="field-label" for="room-code-input">ROOM CODE</label>
         <input class="room-code-input" id="room-code-input" type="text" maxlength="8" autocomplete="off" placeholder="e.g. K7P2QX">
-        <p class="input-hint">Paste the six-character code your friend sent you.</p>
+        <p class="input-hint">Ask your friend for the six-character room code.</p>
         <button class="button button-primary button-wide" id="join-room-button">Join the game <span>→</span></button>
       </div>
-      <div class="modal-footnote"><span>🔒</span> Private rooms. Two players. No spectators.</div>
+      <div class="modal-footnote">Private rooms are just for the two of you.</div>
     </section>
   </div>
 
   <div class="game-room hidden" id="game-room" aria-hidden="true">
-    <div class="room-topbar">
-      <button class="back-button" id="leave-room">← <span>Back to arcade</span></button>
-      <div class="room-brand">play<span>classics</span></div>
-      <div class="room-code"><span>ROOM</span><strong id="room-code-label">------</strong><button id="copy-room-code" title="Copy room code">▢</button></div>
-    </div>
+    <div class="room-topbar"><button class="back-button" id="leave-room">← <span>Back to arcade</span></button><div class="room-brand">play<span>classics</span></div><div class="room-code"><span>ROOM</span><strong id="room-code-label">------</strong><button id="copy-room-code" title="Copy room code">▢</button></div></div>
     <div class="room-layout">
       <section class="play-column">
-        <div class="play-heading">
-          <div><div class="room-eyebrow" id="room-game-kicker">YOUR GAME</div><h1 id="room-game-title">Tic-Tac-Toe</h1></div>
-          <div class="room-live"><span></span> LIVE ROOM</div>
-        </div>
-        <div class="board-card">
-          <div class="board-caption"><span id="board-caption-text">Waiting for your opponent…</span><span id="turn-pill" class="turn-pill">WAITING</span></div>
-          <div id="game-board" class="game-board"></div>
-          <div id="game-controls" class="game-controls"></div>
-        </div>
+        <div class="play-heading"><div><div class="room-eyebrow" id="room-game-kicker">YOUR GAME</div><h1 id="room-game-title">Tic-Tac-Toe</h1></div><div class="room-live"><span></span> LIVE ROOM</div></div>
+        <div class="board-card"><div class="board-caption"><span id="board-caption-text">Waiting for your opponent…</span><span id="turn-pill" class="turn-pill">WAITING</span></div><div id="game-board" class="game-board"></div><div id="game-controls" class="game-controls"></div></div>
         <div class="room-bottom-row"><div class="room-tip"><span>✦</span><p id="game-tip">A classic never gets old.</p></div><button class="button button-danger-quiet" id="resign-button">Resign game</button></div>
       </section>
-
       <aside class="room-side">
-        <div class="players-card"><div class="side-card-heading">AT THE TABLE <span>2 PLAYERS</span></div><div id="room-players" class="room-players"></div><div class="invite-box" id="invite-box"><span class="invite-symbol">＋</span><div><strong>Bring your opponent in</strong><small>Send them your room code.</small></div><button id="invite-copy-small">Copy</button></div></div>
+        <div class="players-card"><div class="side-card-heading">AT THE TABLE <span>2 PLAYERS</span></div><div id="room-players" class="room-players"></div><div class="invite-box" id="invite-box"><span class="invite-symbol">＋</span><div><strong>Invite your opponent</strong><small>Send them your room code.</small></div><button id="invite-copy-small">Copy</button></div></div>
         <div class="match-card"><div class="side-card-heading">MATCH INFO</div><div class="match-row"><span>Game</span><strong id="info-game">Tic-Tac-Toe</strong></div><div class="match-row"><span>Format</span><strong>1 vs 1</strong></div><div class="match-row"><span>Room</span><strong id="info-room">------</strong></div><div class="match-row"><span>Rounds</span><strong id="info-round">—</strong></div></div>
         <div class="room-quote"><span>“</span><p>It's not about winning. It's about making sure they know you won.</p><small>ARCADE WISDOM</small></div>
       </aside>
     </div>
   </div>
-
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <div class="setup-banner hidden" id="setup-banner"></div>
 </body>
