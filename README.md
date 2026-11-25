@@ -2,43 +2,48 @@
 
 A Discord-authenticated, invite-link multiplayer arcade with nine classic games.
 
+**Production site:** https://play-classics-inc.vercel.app  
+**Repository:** https://github.com/imtealplayz/play-classics-inc
+
 ## Stack
 
-- Static responsive frontend (no client-side framework requirement)
+- Static responsive frontend with animated game boards and room UI
 - Vercel Node.js Functions for OAuth and authoritative game actions
 - Discord OAuth2 (`identify` scope) with signed, HttpOnly sessions and PKCE
 - Upstash Redis REST for durable rooms and atomic compare-and-set moves
-- `chess.js` for complete legal chess move validation
-- Live room sync via short polling (reliable on serverless deployments)
+- `chess.js` for legal chess move validation
+- Live room sync via short polling, designed for serverless deployments
 
 ## Games
 
 Tic-Tac-Toe, Chess, Rock Paper Scissors, Connect Four, Battleship, Checkers, Reversi, Dots and Boxes, and Gomoku.
 
-## Required production setup
+## Production setup
 
-This project intentionally refuses to pretend that multiplayer is configured when the required services are missing. Add these environment variables in **Vercel → Project → Settings → Environment Variables** for Production and Preview:
+The frontend is deployed at the production URL above. The `APP_URL` and `SESSION_SECRET` production settings are already configured in the linked Vercel project. Discord sign-in and persistent multiplayer rooms become active after the following service credentials are connected.
+
+Add these variables in **Vercel → Project → Settings → Environment Variables** for Production:
 
 | Variable | Where it comes from |
 | --- | --- |
 | `DISCORD_CLIENT_ID` | Discord Developer Portal → your application → OAuth2 → Client ID |
 | `DISCORD_CLIENT_SECRET` | Discord Developer Portal → your application → OAuth2 → Client Secret |
-| `APP_URL` | The exact deployed origin, e.g. `https://play-classics-inc.vercel.app` |
-| `SESSION_SECRET` | A random secret of at least 32 characters |
 | `UPSTASH_REDIS_REST_URL` | Vercel Marketplace → Upstash Redis integration |
 | `UPSTASH_REDIS_REST_TOKEN` | Vercel Marketplace → Upstash Redis integration |
 
 ### Discord OAuth redirect URL
 
-After the Vercel deployment has a stable URL, add this exact redirect under Discord Developer Portal → OAuth2 → Redirects:
+In Discord Developer Portal → OAuth2 → Redirects, add this exact URL:
 
-`https://YOUR-VERCEL-DOMAIN/api/auth/callback`
+`https://play-classics-inc.vercel.app/api/auth/callback`
 
 Only the `identify` OAuth scope is requested. No Discord password, bot token, or guild permissions are requested.
 
 ### Redis
 
-Install **Upstash Redis** from the Vercel Marketplace and connect it to this Vercel project. The room API uses Redis atomic scripts to prevent simultaneous turns from overwriting one another. Rooms expire after 24 hours. The application does not store game state in process memory.
+Install **Upstash Redis** from the Vercel Marketplace and connect it to the `play-classics-inc` Vercel project. The room API uses Redis atomic scripts to prevent simultaneous turns from overwriting one another. Rooms expire after 24 hours. The application does not store game state in process memory.
+
+After adding the Discord credentials and connecting Upstash Redis, redeploy the Production environment. Do not paste secrets into source files or commit them to GitHub.
 
 ## Local development
 
