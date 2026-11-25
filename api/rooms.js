@@ -1,6 +1,6 @@
 const crypto = require('node:crypto');
 const { getSession } = require('../lib/security');
-const { readRoom, createRoom, compareAndSet, joinRoom } = require('../lib/redis');
+const { readRoom, createRoom, compareAndSet, joinRoom } = require('../lib/mongodb');
 const { CATALOG, initialState, applyMove, applyRoundAction, publicRoom } = require('../lib/games');
 
 function id() {
@@ -11,7 +11,9 @@ function player(user) {
 }
 function safeError(error) {
   const message = error?.message || 'Something went wrong.';
-  return message.includes('Redis request failed') || message.includes('fetch failed') ? 'The room service is temporarily unavailable. Please try again.' : message;
+  if (message.includes('MongoDB is not connected')) return message;
+  if (error?.name?.startsWith('Mongo') || message.includes('MongoServerSelectionError') || message.includes('fetch failed')) return 'The room service is temporarily unavailable. Please try again.';
+  return message;
 }
 async function jsonBody(req) {
   if (req.body && typeof req.body === 'object') return req.body;
@@ -97,7 +99,7 @@ module.exports = async function handler(req, res) {
   } catch (error) {
     console.error('Room API:', error.message);
     const message = safeError(error);
-    const status = message.includes('not connected yet') || message.includes('temporarily unavailable') ? 503 : 400;
+    const status = message.includes('not connected') || message.includes('temporarily unavailable') || message.includes('MongoDB') ? 503 : 400;
     return res.status(status).json({ error: message });
   }
 };
