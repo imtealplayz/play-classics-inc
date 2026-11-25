@@ -1,0 +1,17 @@
+{
+  "name": "play-classics-inc",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A Discord-powered multiplayer arcade for classic games.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vercel dev",
+    "check": "node --check api/rooms.js && node --check api/auth/login.js && node --check api/auth/callback.js && node --check lib/games.js && node --check lib/redis.js && node --check lib/security.js && node --check app.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "chess.js": "^1.4.0"
+  }
+}
